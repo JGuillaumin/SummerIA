@@ -84,7 +84,7 @@ Lorsque `Anaconda Navigator` est ouvert, dans l'onglet `Home`, vous allez trouve
   - il s'agit d'un environnement de développement (IDE) pour Python
   - vous allez pouvoir écrire du code Python dans des scripts (fichiers .py) 
   - et les exécuter facilement
-  - **nous vous recommandons de l'installer** notamment pour faire le cours 'pré-requis' de Python
+  - **nous vous recommandons de l'installer** notamment pour faire le cours 'prérequis' de Python
   - il suffit de cliquer sur `Install`.
 
 
