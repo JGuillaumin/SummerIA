@@ -91,7 +91,7 @@ Lorsque `Anaconda Navigator` est ouvert, dans l'onglet `Home`, vous allez trouve
 
 #### Tester les librairies 
 
-Nous avons créer un fichier `test.py` qui va exécuter certaines opérations de test, pour savoir si tout s'est bien installé. 
+Nous avons créé un fichier `test.py` qui va exécuter certaines opérations de test, pour savoir si tout s'est bien installé. 
 Pour ça, nous allons le faire dans `Spyder` : 
 
 - Lancez `Anaconda Navigator`.
