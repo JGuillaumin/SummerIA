@@ -2,13 +2,16 @@
 
 Instructions d'installation pour SummerIA 2017 (french AI summer school for high-school pupils) 
 
+## Anaconda
+
 
 ## Installer la suite Anaconda sur Windows 10/8/7 
 
-**Testé** : sur Win10 (OK)
+**Testé** : sur Win10, Win7 (OK)
 
-#### Étapes : 
-- télécharger le .exe sur : https://www.continuum.io/downloads
+#### Étapes :
+
+- télécharger le fichier *.exe sur : https://www.continuum.io/downloads (onglet "Download for Windows")
     - choisir la version "Python 3.6, 64-bit installer" si vous êtes sur un ordinateur 64-bit
     - si vous êtes sur une machine 32-bit (assez rare) choisir la version "Python 3.6, 32-bit installer".
     - si vous avez un doute sur le 64 vs 32 bit [rendez-vous ici](http://www.commentcamarche.net/faq/19107-32-ou-64-bits-comment-savoir)
@@ -22,11 +25,41 @@ Instructions d'installation pour SummerIA 2017 (french AI summer school for high
 
 ## Installer la suite Anaconda sur Linux 
 
-TODO
+**Testé** : sur Ubuntu 16.04 (OK)
 
-## Installer la suite Anaconda sur Mac 
+- télécharger le *.sh sur : https://www.continuum.io/downloads (onglet "Download for Linux")
+    - choisir la version "Python 3.6, 64-bit (x86) Installer"
 
-TODO
+- une fois le *.sh téléchargé (environ 500Mo):
+     - ouvrez un terminal (Ctrl + Alt +t)
+     - allez dans le dossier où se trouve le *.sh, par exemple :
+        `cd /home/user_name/Téléchargements/`
+     - Exécuter ces commandes :
+
+```bash
+# installer Anaconda dans /opt/anaconda3, et -b vous evite de répondre à toutes les questions
+sudo bash Anaconda3-4.4.0-Linux-x86_64.sh -b -p /opt/anaconda3
+
+# ces deux lignes permettent d utiliser anaconda-navigator et conda
+# sans modifier les variables d environnement
+sudo ln -s /opt/anaconda3/bin/anaconda-navigator /usr/local/bin/anaconda-navigator
+sudo ln -s /opt/anaconda3/bin/conda /usr/local/bin/conda
+```
+
+Et voilà tout est installé !
+
+
+
+## Installer la suite Anaconda sur Mac
+
+**Non testé**
+
+- télécharger le *.pkg sur : https://www.continuum.io/downloads (onglet "Download for macOS")
+    - choisir le fichier "Graphical Installer for Python 3.6)"
+
+- double-cliquer dessus pour l'installer
+
+**TOTO** : est-ce que le pocesseur d'un mac peut tester l'installation ?
 
 
 ## Créer l'environnement de travail pour SummerIA 
@@ -45,7 +78,7 @@ Rendez vous sur https://github.com/JGuillaumin/SummerIA :
 
 > GitHub est un service web d'hébergement et de gestion de code informatique. 
 > C'est très pratique pour travailler à plusieurs sur le même projet. 
-> Beaucoup d'entreprises, comme Google, utilisent cette plateforme pour diffuser leurs projets open-source (libres)
+> Beaucoup d'entreprises, comme Google, utilisent cette plateforme pour diffuser leurs projets open-source (libres), ce qui permet à tout le monde d'utiliser et d'améliorer ces outils.
 
 #### Importer l’environnement dans Anaconda
 
@@ -53,13 +86,35 @@ Rendez vous sur https://github.com/JGuillaumin/SummerIA :
 Ce dossier contient un fichier `environment.yaml` qui liste toutes les librairies utiles à la semaine. 
 Notamment des libraires pour faire du traitement de l'image, de la reconnaissance de forme, etc.
 
-- Lancez `Anaconda Navigator` (disponible dans Démarrer/Logiciel ..)
+##### Windows et Max
+
+- Lancez `Anaconda Navigator`
+
+    - disponible dans Démarrer/Logiciel pour Windows
+
+    - pour Mac ... à tester ?
+
 - Dans l'onglet 'Environments', cliquez sur 'Import' en bas de la colonne centrale. 
     - nom de l'environnement : `summerIA`
     - puis choisissez le fichier `environment.yaml` fraîchement téléchargé. 
     - puis `OK`
 
-Cette opération va vous créer un environnement Python (Python 3.5 exactement), nommé `summerIA`, avec toutes les librairies nécessaires. Cela peut prendre pas mal de temps (beaucoup d'installations et de fichiers à télécharger).
+##### Linux
+
+Sous Linux, pas besoin de lancer une fenêtre graphique (`anaconda-navigator`) une seule ligne de commande suffit :
+
+```bash
+cd Téléchargements/SummerIA/
+conda env create -f environment.yaml -n summerIA
+
+```
+
+
+Mais vous pouvez toujours lancer  `Anaconda Navigator` sous Linux, avec la commande `anaconda-navigator` dans un terminal(à ne pas fermer).
+
+
+Cette opération va vous créer un environnement Python (Python 3.5 exactement), nommé `summerIA`, avec toutes les librairies nécessaires.
+Cela peut prendre pas mal de temps (beaucoup d'installations et de fichiers à télécharger).
 
 Voilà, tout est prêt pour travailler ensemble à Lyon du 20 au 26 août prochain. 
 Lors des premiers jours de la semaine nous vous donnerons tous les ficihers, bases de données, et autres, pour travailler.
@@ -68,7 +123,8 @@ Maintenant, à chaque fois que vous allez travailler sur des projets lors de la 
 
 #### Ajouter 'Spyder'
 
-Lorsque `Anaconda Navigator` est ouvert, dans l'onglet `Home`, vous allez trouver : 
+Lorsque `Anaconda Navigator` est ouvert, dans l'onglet `Home`, vous allez trouver :
+
 - **Jupyter Notebook (déjà installé)**
   - permet d'écrire du code Python dans une page web
   - d’exécuter le code morceau par morceau
@@ -88,19 +144,6 @@ Lorsque `Anaconda Navigator` est ouvert, dans l'onglet `Home`, vous allez trouve
   - il suffit de cliquer sur `Install`.
 
 
-
-#### Tester les librairies 
-
-Nous avons créé un fichier `test.py` qui va exécuter certaines opérations de test, pour savoir si tout s'est bien installé. 
-Pour ça, nous allons le faire dans `Spyder` : 
-
-- Lancez `Anaconda Navigator`.
-- Dans l'onglet `Home`, sélectionnez bien l'environnement `summerIA`, créé précédemment.
-- Cliquez sur `Launch` correspondant à `Spyder`.
-- Une fois ouvert : Fichier->Ouvrir... , puis sélectionner le fichier `test.py`
-
-
-A FINIR ... 
 
 
 
