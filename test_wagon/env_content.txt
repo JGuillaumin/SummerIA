@@ -1,0 +1,23 @@
+name: test-wagon
+channels: !!python/tuple
+- defaults
+dependencies:
+- openssl=1.0.2l=0
+- pip=9.0.1=py35_1
+- python=3.5.4=0
+- readline=6.2=2
+- setuptools=27.2.0=py35_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- wheel=0.29.0=py35_0
+- xz=5.2.2=1
+- zlib=1.2.8=3
+- pip:
+  - keras==2.0.6
+  - numpy==1.13.1
+  - pyyaml==3.12
+  - scipy==0.19.1
+  - six==1.10.0
+  - theano==0.9.0
+  - wagon==0.6.0
+prefix: /home/zenith/anaconda3/envs/test-wagon
