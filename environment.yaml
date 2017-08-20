@@ -13,11 +13,7 @@ dependencies:
     - scikit-image
     - scipy
     - h5py
-    - eventlet
-    - flask-socketio
-    - imageio=2.1.2
-    - pyqt=4.11.4
     - pip:
-        - tensorflow==1.2.1
         - keras==2.0.6
+        - pygame
 
